@@ -1,0 +1,41 @@
+body {
+  font-family: "PT sans";
+}
+h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+h2 {
+  font-weight: bold;
+}
+i {
+  font-size: 40px;
+  opacity: 50%;
+  text-align: center;
+  padding: 10px 10px;
+}
+
+.container {
+  margin: 20px auto;
+  background-color: rgb(239, 243, 243);
+  max-width: 700px;
+  border: solid;
+  border-style: none;
+  border-radius: 10px;
+  padding: 50px;
+}
+.search-bar {
+  padding-bottom: 20px;
+}
+.fa-cloud {
+  padding: 10px;
+  font-size: 120px;
+}
+.overview {
+  text-align: center;
+}
+.hosted-link {
+margin: 0 auto
+  text-align: center;
+  opacity: 50%;
+}

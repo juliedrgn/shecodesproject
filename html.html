@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app Julie</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/9f45b062ec.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <form class="search-bar" id="search-form">
+        <div class="row">
+          <div class="col-6">
+            <input
+              type="text"
+              placeholder="Enter your city"
+              class="form-control"
+              id="search-input"
+            />
+          </div>
+          <div class="col-3">
+            <input
+              type="button"
+              value="Submit"
+              class="form-control"
+              id="search-city"
+            />
+          </div>
+        </div>
+      </form>
+      <button id="button-current-location">Check my current location</button>
+      <div class="row">
+        <div class="col-6">
+          <div class="float-left"><i class="fas fa-cloud"></i></div>
+        </div>
+        <div class="col-6">
+          <h1 id="temperature">18°</h1>
+          <h2 id="current-city">Antwerp</h2>
+          <small id="current-date"> Monday | 20:00 </small>
+          <br />
+          <small> Cloudy and rainy</small>
+        </div>
+      </div>
+      <hr />
+      <div class="row overview">
+        <div class="col">
+          Monday
+          <br />
+          <i class="fas fa-cloud-showers-heavy"></i>
+          <br />
+          10°
+        </div>
+        <div class="col">
+          Tuesday
+          <br />
+          <i class="fas fa-cloud-showers-heavy"></i>
+          <br />
+          11°
+        </div>
+        <div class="col">
+          Wednesday
+          <br />
+          <i class="fas fa-cloud-showers-heavy"></i>
+          <br />
+          12°
+        </div>
+        <div class="col">
+          Thursday
+          <br />
+          <i class="fas fa-cloud-showers-heavy"></i>
+          <br />
+          12°
+        </div>
+        <div class="col">
+          Friday
+          <br />
+          <i class="fas fa-cloud-showers-heavy"></i>
+          <br />
+          12°
+        </div>
+      </div>
+    </div>
+
+    <div>hosted by netlify</div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
