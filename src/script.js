@@ -22,10 +22,8 @@ function formatTime(date) {
 }
 let datum = document.querySelector("#current-date");
 let currentTime = new Date();
-let searchForm = document.querySelector("#search-form");
-
-searchForm.addEventListener("submit", search);
 datum.innerHTML = formatTime(currentTime);
+
 
 function showTemperature(response) {
   document.querySelector("#current-city").innerHTML = response.data.name;
@@ -48,6 +46,9 @@ function search(event) {
   axios.get(apiUrl).then(showTemperature);
 }
 
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", search);
+
 function showCurrentPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -57,7 +58,6 @@ function showCurrentPosition(position) {
   let apiUrl = `${apiEndpoint}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
 }
-
 navigator.geolocation.getCurrentPosition(showCurrentPosition);
 
 let currentLocationBtn = document.querySelector("#button-current-location");

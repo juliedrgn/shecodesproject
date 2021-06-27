@@ -42,7 +42,7 @@ i {
   text-align: center;
   opacity: 50%;
 }
-.weather-description
+.weather-info
 {
   list-style: none;
   margin: 0;
@@ -50,7 +50,7 @@ i {
   font-size: 14px;
   
 }
-.button-current-location
+#button-current-location
 {
     padding: .375rem .75rem;
     font-size: 1rem;
