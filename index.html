@@ -43,15 +43,17 @@
               id="search-city"
             />
           </div>
+          <div class="col-3">
+          <button class="button-current-location"> My location </button>
+        </div>
         </div>
       </form>
-      <button id="button-current-location">Check my current location</button>
       <div class="row">
         <div class="col-6">
           <div class="float-left"><i class="fas fa-cloud"></i></div>
         </div>
         <div class="col-6">
-          <h1 id="temperature">18° C | F </h1>
+          <h1 id="temperature">18° <div class="units"> C | F </div> </h1>
           <h2 id="current-city">Antwerp</h2>
           <small id="current-date"> Monday | 20:00 </small>
           <br />
@@ -101,8 +103,7 @@
         </div>
       </div>
     </div>
-
-    <div> hosted by <a href="https://www.netlify.com/" target="_blank"> Netlify</a>. Check it out on <a href="https://github.com/juliedrgn/shecodesproject" target="_blank"> Github </a></div>
+    <div class="hosted-link"> Hosted on <a href="https://www.netlify.com/" target="_blank"> Netlify</a>. Check it out on <a href="https://github.com/juliedrgn/shecodesproject" target="_blank"> Github </a></div>
     <script src="src/script.js"></script>
   </body>
 </html>
