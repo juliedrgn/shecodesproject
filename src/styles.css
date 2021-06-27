@@ -39,3 +39,9 @@ margin: 0 auto
   text-align: center;
   opacity: 50%;
 }
+.weather-description
+{
+  list-style: none;
+  font-size: small;
+  
+}
