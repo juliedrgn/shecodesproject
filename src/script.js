@@ -40,10 +40,10 @@ function displayTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "a921daf97c39af523ba6c55cc2fd35f9";
-let city = "Paris";
+let city = document.querySelector("#search-input").value;
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
-
 axios.get(apiUrl).then(displayTemp);
