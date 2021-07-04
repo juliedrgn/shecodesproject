@@ -20,7 +20,6 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} | ${hours}: ${minutes}`;
 }
-
 function displayTemp(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#current-city");
@@ -29,7 +28,6 @@ function displayTemp(response) {
   let windspeedElement = document.querySelector("#windspeed");
   let dateElement = document.querySelector("#current-date");
   let iconElement = document.querySelector("#icon");
-
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -47,17 +45,18 @@ function displayWeather(response) {
 }
 function search(event) {
   event.preventDefault();
-  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
-  let apiKey = "a921daf97c39af523ba6c55cc2fd35f9";
-  let city = document.querySelector("#search-input").value;
-  let units = "metric";
-  let apiUrl = `${apiEndpoint}?q=${city}&appid=${apiKey}&units=${units}`;
   let cityElement = document.querySelector("#current-city");
   let cityInput = document.querySelector("#search-input");
   cityElement.innerHTML = cityInput.value;
+  searchCity(cityInput.value);
+}
+function searchCity(city) {
+  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
+  let apiKey = "a921daf97c39af523ba6c55cc2fd35f9";
+  let units = "metric";
+  let apiUrl = `${apiEndpoint}?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayTemp);
 }
-
 function searchPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -71,14 +70,8 @@ function getCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchPosition);
 }
-
-let apiKey = "a921daf97c39af523ba6c55cc2fd35f9";
-let city = document.querySelector("#search-input").value;
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
-axios.get(apiUrl).then(displayTemp);
-
+searchCity("Paris");
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
-
 let currentLocationBtn = document.querySelector("#button-current-location");
-currentLocationBtn.addEventListener("click", searchPosition);
+currentLocationBtn.addEventListener("click", getCurrentPosition);
