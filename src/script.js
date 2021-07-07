@@ -20,6 +20,35 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} | ${hours}: ${minutes}`;
 }
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `     <div class="col-2">
+            <div class="forecast-day"> ${day}</div>
+            <img
+              src="http://openweathermap.org/img/wn/10d@2x.png"
+              class="weather-icon"
+              alt="Cloudy"
+              width="90"
+            />
+            <div class="forecast-temps">
+              <span id="min-temp"> 10° </span>
+              <span id="max-temp"> 10° </span>
+            </div>
+          </div>
+  `;
+  });
+  forecastHTML = forecastHTML + ` </div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemp(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#current-city");
@@ -40,6 +69,7 @@ function displayTemp(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
 function displayWeather(response) {
   document.querySelector("#search-input").innerHTML = response.data.name;
 }
@@ -71,6 +101,7 @@ function getCurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(searchPosition);
 }
 searchCity("Paris");
+displayForecast();
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 let currentLocationBtn = document.querySelector("#button-current-location");
