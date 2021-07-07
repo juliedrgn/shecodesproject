@@ -27,6 +27,9 @@ i {
 .search-bar {
   padding-bottom: 20px;
 }
+.weather-icon {
+  display: block;
+}
 .units {
   font-size: 16px;
 }

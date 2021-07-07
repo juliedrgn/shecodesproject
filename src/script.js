@@ -36,17 +36,25 @@ function displayForecast() {
               src="http://openweathermap.org/img/wn/10d@2x.png"
               class="weather-icon"
               alt="Cloudy"
-              width="90"
+              width="40"
             />
+            <canvas width="10" height="10"></canvas>
             <div class="forecast-temps">
               <span id="min-temp"> 10° </span>
-              <span id="max-temp"> 10° </span>
+              </br>
+              <span id="max-temp"> 19° </span>
             </div>
           </div>
   `;
   });
   forecastHTML = forecastHTML + ` </div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "a921daf97c39af523ba6c55cc2fd35f9";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemp(response) {
@@ -68,6 +76,8 @@ function displayTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coords);
 }
 
 function displayWeather(response) {
@@ -101,7 +111,6 @@ function getCurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(searchPosition);
 }
 searchCity("Paris");
-displayForecast();
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 let currentLocationBtn = document.querySelector("#button-current-location");
