@@ -10,6 +10,7 @@ h1 {
 
 h2 {
   font-weight: bold;
+  margin-top: -20px;
 }
 
 .container {
@@ -52,12 +53,8 @@ h2 {
 .units {
   position: relative;
   font-size: 16px;
-  top: -40px;
+  top: -60px;
   right: -70px;
-}
-.hosted-link {
-  text-align: center;
-  opacity: 50%;
 }
 .weather-info {
   list-style: none;
@@ -65,11 +62,17 @@ h2 {
   padding: 0;
   font-size: 14px;
   text-transform: capitalize;
+  opacity: 50%;
 }
 .forecast-temps .max-temp {
   font-weight: bold;
   text-align: center;
 }
 .forecast-temps .min-temp {
+  opacity: 50%;
+  text-align: center;
+}
+.hosted-link {
+  text-align: center;
   opacity: 50%;
 }
