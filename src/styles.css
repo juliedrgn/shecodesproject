@@ -25,13 +25,10 @@ i {
   padding: 50px;
 }
 .search-bar {
-  padding-bottom: 20px;
+  padding-bottom: 50px;
 }
 .weather-icon {
   display: block;
-}
-.units {
-  font-size: 16px;
 }
 .fa-cloud {
   padding: 10px;
@@ -39,6 +36,12 @@ i {
 }
 .overview {
   text-align: center;
+}
+.units {
+  position: relative;
+  font-size: 16px;
+  top: -40px;
+  right: -70px;
 }
 .hosted-link {
   text-align: center;
